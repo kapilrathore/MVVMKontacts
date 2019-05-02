@@ -15,6 +15,9 @@
 		8F43015F227AC7D10028FA6D /* KontactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43015E227AC7D10028FA6D /* KontactsUITests.swift */; };
 		8F43016E227AC8300028FA6D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43016D227AC8300028FA6D /* ContactModel.swift */; };
 		8F430170227AC8CD0028FA6D /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43016F227AC8CC0028FA6D /* ContactListViewController.swift */; };
+		8F430174227ACB9F0028FA6D /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430173227ACB9F0028FA6D /* ContactListCell.swift */; };
+		8F430176227ACC060028FA6D /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430175227ACC060028FA6D /* CustomImageView.swift */; };
+		8F430179227ACC520028FA6D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430178227ACC520028FA6D /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		8F430160227AC7D10028FA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F43016D227AC8300028FA6D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		8F43016F227AC8CC0028FA6D /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		8F430173227ACB9F0028FA6D /* ContactListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
+		8F430175227ACC060028FA6D /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		8F430178227ACC520028FA6D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +105,14 @@
 		8F43013D227AC7D00028FA6D /* Kontacts */ = {
 			isa = PBXGroup;
 			children = (
+				8F430177227ACC400028FA6D /* Helper */,
 				8F43016C227AC8230028FA6D /* ContactList */,
 				8F43013E227AC7D00028FA6D /* AppDelegate.swift */,
 				8F430142227AC7D00028FA6D /* Main.storyboard */,
 				8F430145227AC7D10028FA6D /* Assets.xcassets */,
 				8F430147227AC7D10028FA6D /* LaunchScreen.storyboard */,
 				8F43014A227AC7D10028FA6D /* Info.plist */,
+				8F430175227ACC060028FA6D /* CustomImageView.swift */,
 			);
 			path = Kontacts;
 			sourceTree = "<group>";
@@ -132,8 +140,17 @@
 			children = (
 				8F43016D227AC8300028FA6D /* ContactModel.swift */,
 				8F43016F227AC8CC0028FA6D /* ContactListViewController.swift */,
+				8F430173227ACB9F0028FA6D /* ContactListCell.swift */,
 			);
 			path = ContactList;
+			sourceTree = "<group>";
+		};
+		8F430177227ACC400028FA6D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8F430178227ACC520028FA6D /* Reusable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F430179227ACC520028FA6D /* Reusable.swift in Sources */,
+				8F430174227ACB9F0028FA6D /* ContactListCell.swift in Sources */,
 				8F43016E227AC8300028FA6D /* ContactModel.swift in Sources */,
 				8F43013F227AC7D00028FA6D /* AppDelegate.swift in Sources */,
 				8F430170227AC8CD0028FA6D /* ContactListViewController.swift in Sources */,
+				8F430176227ACC060028FA6D /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

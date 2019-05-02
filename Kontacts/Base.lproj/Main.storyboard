@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0FP-51-Jx5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Contact-->
         <scene sceneID="e83-UX-QFk">
             <objects>
-                <viewController id="yuV-CT-qjs" customClass="ContactsViewController" customModule="MVVMContacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yuV-CT-qjs" customClass="ContactListViewController" customModule="Kontacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2tD-XY-XP4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="64" id="BgR-Cq-OKS" customClass="ContactCell" customModule="MVVMContacts" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="64" id="BgR-Cq-OKS" customClass="ContactListCell" customModule="Kontacts" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BgR-Cq-OKS" id="eet-EQ-6w7">
@@ -62,9 +62,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="avatarView" destination="8ko-p7-HHK" id="Sc7-hd-iNX"/>
-                                            <outlet property="favouriteIcon" destination="7zP-mN-ADY" id="xHX-Xs-Bjo"/>
-                                            <outlet property="nameLabel" destination="tyu-rq-uU1" id="9vm-fq-9cO"/>
+                                            <outlet property="avatarView" destination="8ko-p7-HHK" id="eFF-n8-PpF"/>
+                                            <outlet property="favouriteIcon" destination="7zP-mN-ADY" id="dRa-rd-X1b"/>
+                                            <outlet property="nameLabel" destination="tyu-rq-uU1" id="DoJ-0R-t6j"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,13 +91,13 @@
                     <navigationItem key="navigationItem" title="Contact" id="48S-Mw-5o8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dMf-yo-WSi">
                             <connections>
-                                <action selector="addNewContact:" destination="yuV-CT-qjs" id="7RX-RK-p4i"/>
+                                <action selector="addNewContact:" destination="yuV-CT-qjs" id="krH-WJ-DLW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="contactsTable" destination="c6T-TK-iGH" id="Aj6-DC-Zie"/>
-                        <outlet property="loadingView" destination="ZdR-9p-Dmm" id="DIB-nu-YSw"/>
+                        <outlet property="contactsTable" destination="c6T-TK-iGH" id="YYm-xY-XtW"/>
+                        <outlet property="loadingView" destination="ZdR-9p-Dmm" id="r0X-xN-hnW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTd-BY-f4g" sceneMemberID="firstResponder"/>
