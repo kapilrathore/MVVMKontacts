@@ -17,13 +17,13 @@ protocol ContactDetailsViewDelegate: class {
 }
 
 class ContactDetailsViewModel {
-  let contactService: ContactService
+  let contactService: ContactServiceProtocol
   let contact: Contact
   var details: ContactDetails?
   weak var viewDelegate: ContactDetailsViewDelegate?
 
   init(
-    _ contactService: ContactService,
+    _ contactService: ContactServiceProtocol,
     contact: Contact,
     viewDelegate: ContactDetailsViewDelegate
   ) {

@@ -19,6 +19,7 @@ protocol AddEditContactViewDelegate: class {
 class AddEditContactViewModel {
   let purpose: Purpose
   let contactDetails: ContactDetails?
+  private let contactService: ContactServiceProtocol
   weak var viewDelegate: AddEditContactViewDelegate?
 
   var firstName: String = ""
@@ -29,10 +30,12 @@ class AddEditContactViewModel {
   init(
     purpose: Purpose,
     details: ContactDetails?,
+    contactService: ContactServiceProtocol,
     viewDelegate: AddEditContactViewDelegate
-    ) {
+  ) {
     self.purpose = purpose
     self.contactDetails = details
+    self.contactService = contactService
     self.viewDelegate = viewDelegate
 
     if let validDetails = details {
@@ -62,7 +65,7 @@ class AddEditContactViewModel {
       phoneNumber: phoneNumber
     )
     DispatchQueue.global().async {
-      ContactService.instance.addNewContact(updatedContactDetails) { [weak self] response in
+      self.contactService.addNewContact(updatedContactDetails) { [weak self] response in
         DispatchQueue.main.async {
           guard response != nil else {
             self?.viewDelegate?.showLoadingView(false)
@@ -85,7 +88,7 @@ class AddEditContactViewModel {
       phoneNumber: phoneNumber
     )
     DispatchQueue.global().async {
-      ContactService.instance.updateContactDetails(updatedContactDetails, contactId: updatedContactDetails.id) { [weak self] response in
+      self.contactService.updateContactDetails(updatedContactDetails, contactId: updatedContactDetails.id) { [weak self] response in
         DispatchQueue.main.async {
           guard response != nil else {
             print("Error updating contact")

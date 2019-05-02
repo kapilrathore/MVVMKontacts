@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContactService {
+class ContactService: ContactServiceProtocol {
   private init() {}
   static let instance = ContactService()
   private let session = URLSession.shared

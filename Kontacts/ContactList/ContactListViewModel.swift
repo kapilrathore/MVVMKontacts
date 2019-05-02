@@ -15,13 +15,13 @@ protocol ContactListViewDelegate: class {
 }
 
 class ContactListViewModel {
-  private let contactService: ContactService
+  private let contactService: ContactServiceProtocol
   private weak var viewDelegate: ContactListViewDelegate?
 
   private var contactsDictionary = [String: [Contact]]()
   private var contactSectionTitles = [String]()
 
-  init(_ contactService: ContactService, viewDelegate: ContactListViewDelegate) {
+  init(_ contactService: ContactServiceProtocol, viewDelegate: ContactListViewDelegate) {
     self.contactService = contactService
     self.viewDelegate = viewDelegate
     fetchAllContacts()

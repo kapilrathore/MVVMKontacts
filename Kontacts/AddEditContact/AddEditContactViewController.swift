@@ -34,6 +34,7 @@ class AddEditContactViewController: UIViewController, StoryboardLoadable, Reusab
     viewModel = AddEditContactViewModel(
       purpose: purpose,
       details: contactDetails,
+      contactService: ContactService.instance,
       viewDelegate: self
     )
     setupUI()
