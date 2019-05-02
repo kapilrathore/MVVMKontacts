@@ -29,18 +29,23 @@ enum HttpMethod: String {
 
 enum ApiRouter {
   case getAllContacts
+  case getContactDetails(Int)
 
   private static let baseUrl = "http://gojek-contacts-app.herokuapp.com"
 
   var method: HttpMethod {
     switch self {
-      case .getAllContacts: return .get
+      case .getAllContacts        : return .get
+      case .getContactDetails(_)  : return .get
     }
   }
 
   var endpoint: String {
     switch self {
-      case .getAllContacts: return "/contacts.json"
+      case .getAllContacts:
+        return "/contacts.json"
+      case .getContactDetails(let contactId):
+        return "/contacts/\(contactId).json"
     }
   }
 
