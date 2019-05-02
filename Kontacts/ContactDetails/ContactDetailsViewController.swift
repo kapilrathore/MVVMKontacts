@@ -52,7 +52,10 @@ class ContactDetailsViewController: UIViewController, StoryboardLoadable, Reusab
   }
 
   @objc private func gotoEditContactScreen(_ sender: UIBarButtonItem) {
-    // TODO
+    let contactDetailsScreen = AddEditContactViewController(from: AddEditContactViewController.reuseId)
+    contactDetailsScreen.purpose = .edit
+    contactDetailsScreen.contactDetails = viewModel.details
+    navigationController?.pushViewController(contactDetailsScreen, animated: true)
   }
 
   @IBAction func favouriteButtonPress(_ sender: UIButton) {

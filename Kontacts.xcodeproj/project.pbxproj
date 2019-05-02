@@ -127,11 +127,11 @@
 		8F43013D227AC7D00028FA6D /* Kontacts */ = {
 			isa = PBXGroup;
 			children = (
+				8F43016C227AC8230028FA6D /* ContactList */,
 				8F430190227AEBB10028FA6D /* AddEditContact */,
 				8F430185227ADFC30028FA6D /* ContactDetails */,
 				8F43017E227ACEFC0028FA6D /* ContactService */,
 				8F430177227ACC400028FA6D /* Helper */,
-				8F43016C227AC8230028FA6D /* ContactList */,
 				8F43017D227ACEA80028FA6D /* AdditionalFiles */,
 				8F43017C227ACE980028FA6D /* UI */,
 			);

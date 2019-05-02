@@ -42,7 +42,9 @@ class ContactListViewController: UIViewController {
   }
 
   func gotoAddContactScreen() {
-    // TODO
+    let addContactScreen = AddEditContactViewController(from: AddEditContactViewController.reuseId)
+    addContactScreen.purpose = .add
+    navigationController?.pushViewController(addContactScreen, animated: true)
   }
 }
 
