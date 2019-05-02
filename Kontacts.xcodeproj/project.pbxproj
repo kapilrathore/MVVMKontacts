@@ -30,6 +30,10 @@
 		8F430192227AEBC40028FA6D /* AddEditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430191227AEBC40028FA6D /* AddEditContactViewController.swift */; };
 		8F430194227AECCC0028FA6D /* AddEditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430193227AECCC0028FA6D /* AddEditContactViewModel.swift */; };
 		8F430198227AF0FA0028FA6D /* DataChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430197227AF0FA0028FA6D /* DataChangeDelegate.swift */; };
+		8F43019A227AF5980028FA6D /* ContactListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430199227AF5980028FA6D /* ContactListViewModelTests.swift */; };
+		8F43019C227AF87F0028FA6D /* ContactServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43019B227AF87F0028FA6D /* ContactServiceProtocol.swift */; };
+		8F43019E227AFA2C0028FA6D /* MockContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43019D227AFA2C0028FA6D /* MockContactService.swift */; };
+		8F4301A2227AFD470028FA6D /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4301A1227AFD470028FA6D /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		8F430191227AEBC40028FA6D /* AddEditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditContactViewController.swift; sourceTree = "<group>"; };
 		8F430193227AECCC0028FA6D /* AddEditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditContactViewModel.swift; sourceTree = "<group>"; };
 		8F430197227AF0FA0028FA6D /* DataChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChangeDelegate.swift; sourceTree = "<group>"; };
+		8F430199227AF5980028FA6D /* ContactListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModelTests.swift; sourceTree = "<group>"; };
+		8F43019B227AF87F0028FA6D /* ContactServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceProtocol.swift; sourceTree = "<group>"; };
+		8F43019D227AFA2C0028FA6D /* MockContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContactService.swift; sourceTree = "<group>"; };
+		8F4301A1227AFD470028FA6D /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,9 @@
 			children = (
 				8F430153227AC7D10028FA6D /* KontactsTests.swift */,
 				8F430155227AC7D10028FA6D /* Info.plist */,
+				8F430199227AF5980028FA6D /* ContactListViewModelTests.swift */,
+				8F43019D227AFA2C0028FA6D /* MockContactService.swift */,
+				8F4301A1227AFD470028FA6D /* MockData.swift */,
 			);
 			path = KontactsTests;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 			children = (
 				8F43017F227ACF750028FA6D /* ApiRouter.swift */,
 				8F430181227ACFF10028FA6D /* ContactService.swift */,
+				8F43019B227AF87F0028FA6D /* ContactServiceProtocol.swift */,
 			);
 			path = ContactService;
 			sourceTree = "<group>";
@@ -361,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F430179227ACC520028FA6D /* Reusable.swift in Sources */,
+				8F43019C227AF87F0028FA6D /* ContactServiceProtocol.swift in Sources */,
 				8F43018B227AE2980028FA6D /* ContactDetailsModel.swift in Sources */,
 				8F43018D227AE38A0028FA6D /* StoryboardLoadable.swift in Sources */,
 				8F430194227AECCC0028FA6D /* AddEditContactViewModel.swift in Sources */,
@@ -386,6 +399,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F430154227AC7D10028FA6D /* KontactsTests.swift in Sources */,
+				8F4301A2227AFD470028FA6D /* MockData.swift in Sources */,
+				8F43019A227AF5980028FA6D /* ContactListViewModelTests.swift in Sources */,
+				8F43019E227AFA2C0028FA6D /* MockContactService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
