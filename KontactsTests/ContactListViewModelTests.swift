@@ -105,6 +105,13 @@ class ContactListViewModelTests: XCTestCase {
     XCTAssertEqual(expectedValue_2, actualValue_2)
   }
 
+  func test_sectionIndexTitles() {
+    let actualValue = viewModel.contactSectionTitles
+    let expectedValue = MockData.contactSectionTitles
+
+    XCTAssertEqual(expectedValue, actualValue)
+  }
+
   override func tearDown() {
     self.contactService = nil
     self.viewDelegate = nil
