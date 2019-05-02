@@ -32,6 +32,7 @@ enum ApiRouter {
   case getContactDetails(Int)
   case updateContact(Int, ContactDetails)
   case deleteCotnact(Int)
+  case addNewContact(ContactDetails)
 
   private static let baseUrl = "http://gojek-contacts-app.herokuapp.com"
 
@@ -41,6 +42,7 @@ enum ApiRouter {
       case .getContactDetails(_)  : return .get
       case .updateContact(_, _)   : return .put
       case .deleteCotnact(_)      : return .delete
+      case .addNewContact(_)      : return .post
     }
   }
 
@@ -54,6 +56,8 @@ enum ApiRouter {
         return "/contacts/\(contactId).json"
       case .deleteCotnact(let contactId):
         return "/contacts/\(contactId).json"
+      case .addNewContact(_):
+        return "/contacts.json"
     }
   }
 
@@ -65,6 +69,9 @@ enum ApiRouter {
 
     switch self {
       case .updateContact(_, let details):
+        urlRequest.httpBody = try? JSONEncoder.init().encode(details)
+
+      case .addNewContact(let details):
         urlRequest.httpBody = try? JSONEncoder.init().encode(details)
 
       default: break
