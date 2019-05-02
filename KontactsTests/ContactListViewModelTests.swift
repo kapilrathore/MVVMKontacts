@@ -75,7 +75,18 @@ class ContactListViewModelTests: XCTestCase {
     XCTAssertEqual(expectedValue_2, actualValue_2)
   }
 
-  
+  func test_numberOfRow() {
+    let expectedValue = 1
+
+    let actualValue_0 = viewModel.numberOfRow(in: 0)
+    XCTAssertEqual(expectedValue, actualValue_0)
+
+    let actualValue_1 = viewModel.numberOfRow(in: 1)
+    XCTAssertEqual(expectedValue, actualValue_1)
+
+    let actualValue_2 = viewModel.numberOfRow(in: 2)
+    XCTAssertEqual(expectedValue, actualValue_2)
+  }
 
   override func tearDown() {
     self.contactService = nil
