@@ -47,6 +47,13 @@ class ContactListViewModelTests: XCTestCase {
     }
   }
 
+  func test_getContactsDictionary() {
+    let actualValue = viewModel.contactsDictionary
+    let expectedValue = MockData.contactDictionary
+
+    XCTAssertEqual(expectedValue, actualValue)
+  }
+
   override func tearDown() {
     self.contactService = nil
     self.viewDelegate = nil
