@@ -13,6 +13,18 @@ enum HttpMethod: String {
   case post = "POST"
   case put = "PUT"
   case delete = "DELETE"
+
+  func getErrorMessage() -> String {
+    var operation = ""
+    switch self {
+      case .get   : operation = "fetch"
+      case .post  : operation = "add"
+      case .put   : operation = "update"
+      case .delete: operation = "delete"
+    }
+
+    return "Could not \(operation) contact. Please try again later."
+  }
 }
 
 enum ApiRouter {
