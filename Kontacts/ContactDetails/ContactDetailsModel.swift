@@ -35,6 +35,20 @@ struct ContactDetails: Codable, Equatable {
     return "\(firstName) \(lastName)".capitalized
   }
 
+  static func newContact() -> ContactDetails {
+    return ContactDetails(
+      id: -1,
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      avatarUrl: "",
+      isFavourite: false,
+      createdAt: "",
+      updatedAt: ""
+    )
+  }
+
   func copy(
     firstName: String? = nil,
     lastName: String? = nil,
