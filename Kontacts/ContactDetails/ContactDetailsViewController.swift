@@ -18,10 +18,16 @@ class ContactDetailsViewController: UIViewController, StoryboardLoadable, Reusab
   @IBOutlet private weak var loadingView: UIActivityIndicatorView!
 
   var contact: Contact!
+  var viewModel: ContactDetailsViewModel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    viewModel = ContactDetailsViewModel(
+      ContactService.instance,
+      contact: contact,
+      viewDelegate: self
+    )
     setupUI()
   }
 
@@ -50,22 +56,62 @@ class ContactDetailsViewController: UIViewController, StoryboardLoadable, Reusab
   }
 
   @IBAction func favouriteButtonPress(_ sender: UIButton) {
-    // TODO
+    viewModel.favouriteClicked()
   }
 
   @IBAction private func sendEmail() {
-    // TODO
+    guard let url = viewModel.getMailUrl() else { return }
+    UIApplication.shared.open(url)
   }
 
   @IBAction private func makePhoneCall() {
-    // TODO
+    guard let url = viewModel.phoneCallUrl() else { return }
+    UIApplication.shared.open(url)
   }
 
   @IBAction private func sendMessage() {
-    // TODO
+    guard let url = viewModel.getSmsUrl() else { return }
+    UIApplication.shared.open(url)
   }
 
   @IBAction private func deteleContact() {
+    showConfirmation("Do you want to delete this contact permanently?") { _ in
+      self.viewModel.deleteContact()
+    }
+  }
+}
+
+extension ContactDetailsViewController: ContactDetailsViewDelegate {
+  func showApiError(for method: HttpMethod) {
+    showError(method.getErrorMessage())
+  }
+
+  func contactEditted() {
     // TODO
+  }
+
+  func showLoading(_ show: Bool) {
+    show ? loadingView.startAnimating() : loadingView.stopAnimating()
+  }
+
+  func reloadData() {
+    guard let details = viewModel.details else { return }
+
+    fullNameLabel.text = details.fullName()
+
+    let phoneNumber = details.phoneNumber.isEmpty ? "N/A" : details.phoneNumber
+    phoneNumberLabel.text = phoneNumber
+
+    let email = details.email.isEmpty ? "N/A" : details.email
+    emailLabel.text = email
+
+    let favImage = details.isFavourite ? #imageLiteral(resourceName: "favourite_button_selected") : #imageLiteral(resourceName: "favourite_button")
+    favouriteButton.setImage(favImage, for: .normal)
+
+    self.avatarView.loadImageFromUrl(details.avatarUrl)
+  }
+
+  func contactDeleted() {
+    self.navigationController?.popViewController(animated: true)
   }
 }
