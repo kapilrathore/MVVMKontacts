@@ -38,4 +38,17 @@ class ContactService {
       completion(contactDetails)
     }.resume()
   }
+
+  func updateContactDetails(_ details: ContactDetails, contactId: Int, completion: @escaping (ContactDetails?) -> ()) {
+    let urlRequest = ApiRouter.updateContact(contactId, details).request()
+
+    session.dataTask(with: urlRequest) {
+      (data, response, error) in
+
+      guard let data = data else { return completion(nil) }
+      let contactDetails = try? JSONDecoder().decode(ContactDetails.self, from: data)
+
+      completion(contactDetails)
+    }.resume()
+  }
 }

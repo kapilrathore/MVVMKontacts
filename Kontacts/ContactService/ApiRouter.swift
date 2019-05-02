@@ -30,6 +30,7 @@ enum HttpMethod: String {
 enum ApiRouter {
   case getAllContacts
   case getContactDetails(Int)
+  case updateContact(Int, ContactDetails)
 
   private static let baseUrl = "http://gojek-contacts-app.herokuapp.com"
 
@@ -37,6 +38,7 @@ enum ApiRouter {
     switch self {
       case .getAllContacts        : return .get
       case .getContactDetails(_)  : return .get
+      case .updateContact(_, _)   : return .put
     }
   }
 
@@ -46,6 +48,8 @@ enum ApiRouter {
         return "/contacts.json"
       case .getContactDetails(let contactId):
         return "/contacts/\(contactId).json"
+      case .updateContact(let contactId, _):
+        return "/contacts/\(contactId).json"
     }
   }
 
@@ -54,6 +58,13 @@ enum ApiRouter {
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
     urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    switch self {
+      case .updateContact(_, let details):
+        urlRequest.httpBody = try? JSONEncoder.init().encode(details)
+
+      default: break
+    }
 
     return urlRequest
   }
