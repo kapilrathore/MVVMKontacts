@@ -18,6 +18,8 @@ class MockContactService: ContactServiceProtocol {
   }
 
   func getContactDetails(for id: Int, completion: @escaping (ContactDetails?) -> ()) {
+    let contactDetails = MockData.MockContactDetails.allContacts.first { $0.id == id }
+    completion(contactDetails)
   }
 
   func updateContactDetails(_ details: ContactDetails, contactId: Int, completion: @escaping (ContactDetails?) -> ()) {

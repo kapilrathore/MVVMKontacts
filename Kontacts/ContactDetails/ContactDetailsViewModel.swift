@@ -36,7 +36,7 @@ class ContactDetailsViewModel {
   func fetchContactDetails() {
     viewDelegate?.showLoading(true)
     DispatchQueue.global().async {
-      ContactService.instance.getContactDetails(for: self.contact.id) { [weak self] response in
+      self.contactService.getContactDetails(for: self.contact.id) { [weak self] response in
         DispatchQueue.main.async {
           guard let details = response else {
             self?.viewDelegate?.showLoading(false)
@@ -55,7 +55,7 @@ class ContactDetailsViewModel {
     guard let details = details else { return }
     viewDelegate?.showLoading(true)
     DispatchQueue.global().async {
-      ContactService.instance.deleteContact(contactId: details.id) { [weak self] response in
+      self.contactService.deleteContact(contactId: details.id) { [weak self] response in
         DispatchQueue.main.async {
           if response {
             self?.viewDelegate?.contactDeleted()
@@ -73,7 +73,7 @@ class ContactDetailsViewModel {
     let updatedContactDetails = details.copy(isFavourite: !details.isFavourite)
     viewDelegate?.showLoading(true)
     DispatchQueue.global().async {
-      ContactService.instance.updateContactDetails(updatedContactDetails, contactId: details.id) { [weak self] response in
+      self.contactService.updateContactDetails(updatedContactDetails, contactId: details.id) { [weak self] response in
         DispatchQueue.main.async {
           guard let details = response else {
             self?.viewDelegate?.showLoading(false)
