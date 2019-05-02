@@ -12,9 +12,15 @@ class ContactListViewController: UIViewController {
   @IBOutlet private weak var contactsTable: UITableView!
   @IBOutlet private weak var loadingView: UIActivityIndicatorView!
 
+  var viewModel: ContactListViewModel!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    viewModel = ContactListViewModel(
+      ContactService.instance,
+      viewDelegate: self
+    )
     setupContactsTable()
   }
 
@@ -26,36 +32,69 @@ class ContactListViewController: UIViewController {
   }
 
   @IBAction private func addNewContact(_ sender: UIBarButtonItem) {
+    gotoAddContactScreen()
+  }
+
+  func gotoContactDetailsScreen(_ contact: Contact) {
+    // TODO
+  }
+
+  func gotoAddContactScreen() {
+    // TODO
   }
 }
 
 extension ContactListViewController: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 2
+    return viewModel.numberOfSections()
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return ""
+    return viewModel.titleForHeader(in: section)
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return viewModel.numberOfRow(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactListCell.reuseId, for: indexPath) as? ContactListCell else {
+      return UITableViewCell()
+    }
+
+    if let contact = viewModel.item(for: indexPath) {
+      cell.configureCell(with: contact)
+    }
+    return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // TODO
-    print("did select \(indexPath)")
+    if let contact = viewModel.item(for: indexPath) {
+      gotoContactDetailsScreen(contact)
+    }
   }
 
   func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-    return ["a", "b"]
+    return viewModel.sectionIndexTitles()
   }
 
   func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-    return 1
+    return viewModel.section(for: title)
+  }
+}
+
+extension ContactListViewController: ContactListViewDelegate {
+  func showApiError(for method: HttpMethod) {
+    showError(method.getErrorMessage())
+  }
+
+  func reloadData() {
+    let dataPresent = viewModel.numberOfSections() > 0
+    contactsTable.separatorStyle = dataPresent ? .singleLine : .none
+    contactsTable.reloadData()
+  }
+
+  func showLoadingView(_ show: Bool) {
+    show ? loadingView.startAnimating() : loadingView.stopAnimating()
   }
 }

@@ -21,6 +21,7 @@
 		8F43017B227ACE460028FA6D /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43017A227ACE460028FA6D /* ContactListViewModel.swift */; };
 		8F430180227ACF750028FA6D /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43017F227ACF750028FA6D /* ApiRouter.swift */; };
 		8F430182227ACFF10028FA6D /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430181227ACFF10028FA6D /* ContactService.swift */; };
+		8F430184227AD1010028FA6D /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430183227AD1010028FA6D /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		8F43017A227ACE460028FA6D /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		8F43017F227ACF750028FA6D /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		8F430181227ACFF10028FA6D /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		8F430183227AD1010028FA6D /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				8F430178227ACC520028FA6D /* Reusable.swift */,
 				8F430175227ACC060028FA6D /* CustomImageView.swift */,
+				8F430183227AD1010028FA6D /* UIViewController+Ext.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			files = (
 				8F430179227ACC520028FA6D /* Reusable.swift in Sources */,
 				8F430174227ACB9F0028FA6D /* ContactListCell.swift in Sources */,
+				8F430184227AD1010028FA6D /* UIViewController+Ext.swift in Sources */,
 				8F430182227ACFF10028FA6D /* ContactService.swift in Sources */,
 				8F43016E227AC8300028FA6D /* ContactModel.swift in Sources */,
 				8F43013F227AC7D00028FA6D /* AppDelegate.swift in Sources */,
