@@ -55,6 +55,15 @@ class ContactDetailsViewModelTests: XCTestCase {
     }
   }
 
+  func test_getMailUrl() {
+    let expectedValue = URL(string: "mailto:kapil@mail.com")
+    let actualValue = self.viewModel.getMailUrl()
+    XCTAssertEqual(expectedValue, actualValue)
+
+    self.viewModel.details = nil
+    XCTAssertNil(self.viewModel.getMailUrl())
+  }
+
   override func tearDown() {
     viewModel = nil
     contactService = nil
