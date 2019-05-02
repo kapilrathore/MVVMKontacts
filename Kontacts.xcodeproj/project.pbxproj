@@ -29,6 +29,7 @@
 		8F43018F227AE5C80028FA6D /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43018E227AE5C80028FA6D /* ContactDetailsViewModel.swift */; };
 		8F430192227AEBC40028FA6D /* AddEditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430191227AEBC40028FA6D /* AddEditContactViewController.swift */; };
 		8F430194227AECCC0028FA6D /* AddEditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430193227AECCC0028FA6D /* AddEditContactViewModel.swift */; };
+		8F430198227AF0FA0028FA6D /* DataChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430197227AF0FA0028FA6D /* DataChangeDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		8F43018E227AE5C80028FA6D /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 		8F430191227AEBC40028FA6D /* AddEditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditContactViewController.swift; sourceTree = "<group>"; };
 		8F430193227AECCC0028FA6D /* AddEditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditContactViewModel.swift; sourceTree = "<group>"; };
+		8F430197227AF0FA0028FA6D /* DataChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChangeDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				8F430183227AD1010028FA6D /* UIViewController+Ext.swift */,
 				8F430188227AE0BF0028FA6D /* UIView+Ext.swift */,
 				8F43018C227AE38A0028FA6D /* StoryboardLoadable.swift */,
+				8F430197227AF0FA0028FA6D /* DataChangeDelegate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				8F430174227ACB9F0028FA6D /* ContactListCell.swift in Sources */,
 				8F430184227AD1010028FA6D /* UIViewController+Ext.swift in Sources */,
 				8F430182227ACFF10028FA6D /* ContactService.swift in Sources */,
+				8F430198227AF0FA0028FA6D /* DataChangeDelegate.swift in Sources */,
 				8F43016E227AC8300028FA6D /* ContactModel.swift in Sources */,
 				8F43013F227AC7D00028FA6D /* AppDelegate.swift in Sources */,
 				8F430170227AC8CD0028FA6D /* ContactListViewController.swift in Sources */,
