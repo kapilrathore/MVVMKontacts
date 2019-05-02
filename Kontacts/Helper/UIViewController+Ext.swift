@@ -20,4 +20,9 @@ extension UIViewController {
 
     present(alert, animated: true, completion: nil)
   }
+
+  func setupClearNavigationBar() {
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
+  }
 }
