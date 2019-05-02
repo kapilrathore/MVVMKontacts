@@ -51,4 +51,14 @@ class ContactService {
       completion(contactDetails)
     }.resume()
   }
+
+  func deleteContact(contactId: Int, completion: @escaping (Bool) -> ()) {
+    let urlRequest = ApiRouter.deleteCotnact(contactId).request()
+
+    session.dataTask(with: urlRequest) {
+      (data, response, error) in
+
+      completion(error == nil)
+    }.resume()
+  }
 }
