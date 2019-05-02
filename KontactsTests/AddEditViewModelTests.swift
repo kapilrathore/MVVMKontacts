@@ -52,6 +52,16 @@ class AddEditViewModelTests: XCTestCase {
     XCTAssertEqual(validDetails.email, viewModel.email)
   }
 
+  func test_isFormValid() {
+    let details: ContactDetails? = nil
+    initViewModel(with: details)
+    XCTAssertEqual(viewModel.isFormValid(), false)
+
+    let validDetails = MockData.MockContactDetails.kapilDetails
+    initViewModel(with: validDetails)
+    XCTAssertEqual(viewModel.isFormValid(), true)
+  }
+
   override func tearDown() {
     viewModel = nil
     contactService = nil
