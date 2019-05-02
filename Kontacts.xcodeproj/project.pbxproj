@@ -26,6 +26,7 @@
 		8F430189227AE0BF0028FA6D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430188227AE0BF0028FA6D /* UIView+Ext.swift */; };
 		8F43018B227AE2980028FA6D /* ContactDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43018A227AE2980028FA6D /* ContactDetailsModel.swift */; };
 		8F43018D227AE38A0028FA6D /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43018C227AE38A0028FA6D /* StoryboardLoadable.swift */; };
+		8F43018F227AE5C80028FA6D /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43018E227AE5C80028FA6D /* ContactDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8F430188227AE0BF0028FA6D /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		8F43018A227AE2980028FA6D /* ContactDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsModel.swift; sourceTree = "<group>"; };
 		8F43018C227AE38A0028FA6D /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		8F43018E227AE5C80028FA6D /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,8 +205,9 @@
 		8F430185227ADFC30028FA6D /* ContactDetails */ = {
 			isa = PBXGroup;
 			children = (
-				8F430186227ADFE20028FA6D /* ContactDetailsViewController.swift */,
 				8F43018A227AE2980028FA6D /* ContactDetailsModel.swift */,
+				8F430186227ADFE20028FA6D /* ContactDetailsViewController.swift */,
+				8F43018E227AE5C80028FA6D /* ContactDetailsViewModel.swift */,
 			);
 			path = ContactDetails;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				8F430180227ACF750028FA6D /* ApiRouter.swift in Sources */,
 				8F43017B227ACE460028FA6D /* ContactListViewModel.swift in Sources */,
 				8F430176227ACC060028FA6D /* CustomImageView.swift in Sources */,
+				8F43018F227AE5C80028FA6D /* ContactDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
