@@ -34,6 +34,7 @@
 		8F43019E227AFA2C0028FA6D /* MockContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43019D227AFA2C0028FA6D /* MockContactService.swift */; };
 		8F4301A2227AFD470028FA6D /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4301A1227AFD470028FA6D /* MockData.swift */; };
 		8F4301A4227B26D30028FA6D /* ContactDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4301A3227B26D30028FA6D /* ContactDetailsViewModelTests.swift */; };
+		8F4301A6227B71590028FA6D /* AddEditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4301A5227B71590028FA6D /* AddEditViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		8F43019D227AFA2C0028FA6D /* MockContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContactService.swift; sourceTree = "<group>"; };
 		8F4301A1227AFD470028FA6D /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		8F4301A3227B26D30028FA6D /* ContactDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		8F4301A5227B71590028FA6D /* AddEditViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				8F430155227AC7D10028FA6D /* Info.plist */,
 				8F430199227AF5980028FA6D /* ContactListViewModelTests.swift */,
 				8F4301A3227B26D30028FA6D /* ContactDetailsViewModelTests.swift */,
+				8F4301A5227B71590028FA6D /* AddEditViewModelTests.swift */,
 				8F43019D227AFA2C0028FA6D /* MockContactService.swift */,
 				8F4301A1227AFD470028FA6D /* MockData.swift */,
 			);
@@ -402,6 +405,7 @@
 				8F4301A2227AFD470028FA6D /* MockData.swift in Sources */,
 				8F43019A227AF5980028FA6D /* ContactListViewModelTests.swift in Sources */,
 				8F43019E227AFA2C0028FA6D /* MockContactService.swift in Sources */,
+				8F4301A6227B71590028FA6D /* AddEditViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
