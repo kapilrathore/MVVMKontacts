@@ -18,6 +18,9 @@
 		8F430174227ACB9F0028FA6D /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430173227ACB9F0028FA6D /* ContactListCell.swift */; };
 		8F430176227ACC060028FA6D /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430175227ACC060028FA6D /* CustomImageView.swift */; };
 		8F430179227ACC520028FA6D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430178227ACC520028FA6D /* Reusable.swift */; };
+		8F43017B227ACE460028FA6D /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43017A227ACE460028FA6D /* ContactListViewModel.swift */; };
+		8F430180227ACF750028FA6D /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43017F227ACF750028FA6D /* ApiRouter.swift */; };
+		8F430182227ACFF10028FA6D /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F430181227ACFF10028FA6D /* ContactService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		8F430173227ACB9F0028FA6D /* ContactListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
 		8F430175227ACC060028FA6D /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		8F430178227ACC520028FA6D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		8F43017A227ACE460028FA6D /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		8F43017F227ACF750028FA6D /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		8F430181227ACFF10028FA6D /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +111,11 @@
 		8F43013D227AC7D00028FA6D /* Kontacts */ = {
 			isa = PBXGroup;
 			children = (
+				8F43017E227ACEFC0028FA6D /* ContactService */,
 				8F430177227ACC400028FA6D /* Helper */,
 				8F43016C227AC8230028FA6D /* ContactList */,
-				8F43013E227AC7D00028FA6D /* AppDelegate.swift */,
-				8F430142227AC7D00028FA6D /* Main.storyboard */,
-				8F430145227AC7D10028FA6D /* Assets.xcassets */,
-				8F430147227AC7D10028FA6D /* LaunchScreen.storyboard */,
-				8F43014A227AC7D10028FA6D /* Info.plist */,
-				8F430175227ACC060028FA6D /* CustomImageView.swift */,
+				8F43017D227ACEA80028FA6D /* AdditionalFiles */,
+				8F43017C227ACE980028FA6D /* UI */,
 			);
 			path = Kontacts;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			children = (
 				8F43016D227AC8300028FA6D /* ContactModel.swift */,
 				8F43016F227AC8CC0028FA6D /* ContactListViewController.swift */,
+				8F43017A227ACE460028FA6D /* ContactListViewModel.swift */,
 				8F430173227ACB9F0028FA6D /* ContactListCell.swift */,
 			);
 			path = ContactList;
@@ -149,8 +153,37 @@
 			isa = PBXGroup;
 			children = (
 				8F430178227ACC520028FA6D /* Reusable.swift */,
+				8F430175227ACC060028FA6D /* CustomImageView.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		8F43017C227ACE980028FA6D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8F430142227AC7D00028FA6D /* Main.storyboard */,
+				8F430145227AC7D10028FA6D /* Assets.xcassets */,
+				8F430147227AC7D10028FA6D /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8F43017D227ACEA80028FA6D /* AdditionalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8F43013E227AC7D00028FA6D /* AppDelegate.swift */,
+				8F43014A227AC7D10028FA6D /* Info.plist */,
+			);
+			path = AdditionalFiles;
+			sourceTree = "<group>";
+		};
+		8F43017E227ACEFC0028FA6D /* ContactService */ = {
+			isa = PBXGroup;
+			children = (
+				8F43017F227ACF750028FA6D /* ApiRouter.swift */,
+				8F430181227ACFF10028FA6D /* ContactService.swift */,
+			);
+			path = ContactService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +319,12 @@
 			files = (
 				8F430179227ACC520028FA6D /* Reusable.swift in Sources */,
 				8F430174227ACB9F0028FA6D /* ContactListCell.swift in Sources */,
+				8F430182227ACFF10028FA6D /* ContactService.swift in Sources */,
 				8F43016E227AC8300028FA6D /* ContactModel.swift in Sources */,
 				8F43013F227AC7D00028FA6D /* AppDelegate.swift in Sources */,
 				8F430170227AC8CD0028FA6D /* ContactListViewController.swift in Sources */,
+				8F430180227ACF750028FA6D /* ApiRouter.swift in Sources */,
+				8F43017B227ACE460028FA6D /* ContactListViewModel.swift in Sources */,
 				8F430176227ACC060028FA6D /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TMG254D42M;
-				INFOPLIST_FILE = Kontacts/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Kontacts/AdditionalFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,7 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TMG254D42M;
-				INFOPLIST_FILE = Kontacts/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Kontacts/AdditionalFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
