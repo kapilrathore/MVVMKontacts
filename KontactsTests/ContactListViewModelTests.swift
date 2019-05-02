@@ -54,6 +54,13 @@ class ContactListViewModelTests: XCTestCase {
     XCTAssertEqual(expectedValue, actualValue)
   }
 
+  func test_numberOfSections() {
+    let actualValue = viewModel.contactSectionTitles.count
+    let expectedValue = 3
+
+    XCTAssertEqual(expectedValue, actualValue)
+  }
+
   override func tearDown() {
     self.contactService = nil
     self.viewDelegate = nil
