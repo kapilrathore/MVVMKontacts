@@ -25,4 +25,20 @@ extension UIViewController {
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
   }
+
+  func showConfirmation(_ message: String, handler: @escaping (UIAlertAction)->Void) {
+    let alert = UIAlertController(
+      title: "Are you sure?",
+      message: message,
+      preferredStyle: .alert
+    )
+
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+    alert.addAction(cancelAction)
+
+    let okAction = UIAlertAction.init(title: "Ok", style: .destructive, handler: handler)
+    alert.addAction(okAction)
+
+    present(alert, animated: true, completion: nil)
+  }
 }
