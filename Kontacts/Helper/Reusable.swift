@@ -17,3 +17,9 @@ extension ReusableView where Self: UIView {
     return String(describing: self)
   }
 }
+
+extension ReusableView where Self: UIViewController {
+  static var reuseId: String {
+    return String(describing: self)
+  }
+}
