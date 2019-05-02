@@ -25,9 +25,16 @@ class AddEditContactViewController: UIViewController, StoryboardLoadable, Reusab
   var purpose: Purpose = .add
   var contactDetails: ContactDetails?
 
+  var viewModel: AddEditContactViewModel!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    viewModel = AddEditContactViewModel(
+      purpose: purpose,
+      details: contactDetails,
+      viewDelegate: self
+    )
     setupUI()
   }
 
@@ -57,12 +64,30 @@ class AddEditContactViewController: UIViewController, StoryboardLoadable, Reusab
   }
 
   @IBAction func textFieldEditingDidChange(_ textField: UITextField) {
-    // TODO - setup view model properties
+    switch textField {
+      case firstNameField:
+        viewModel.firstName = textField.text ?? ""
+      case lastNameField:
+        viewModel.lastName = textField.text ?? ""
+      case emailField:
+        viewModel.email = textField.text ?? ""
+      case phoneNumberField:
+        viewModel.phoneNumber = textField.text ?? ""
+      default: break
+    }
   }
 
   @objc func doneClick(_ sender: UIBarButtonItem) {
     self.view.endEditing(true)
-    // TODO
+
+    guard viewModel.isFormValid() else {
+      return showError("All fields are required.")
+    }
+
+    switch viewModel.purpose {
+    case .add : viewModel.addNewContact()
+    case .edit: viewModel.editContact()
+    }
   }
 
   @objc func cancelClick(_ sender: UIBarButtonItem) {
@@ -70,3 +95,27 @@ class AddEditContactViewController: UIViewController, StoryboardLoadable, Reusab
   }
 }
 
+extension AddEditContactViewController: AddEditContactViewDelegate {
+  func showApiError(for method: HttpMethod) {
+    showError(method.getErrorMessage())
+  }
+
+  func contactAddedSuccessfully() {
+    self.navigationController?.popViewController(animated: true)
+  }
+
+  func contactEdittedSuccessfully() {
+    self.navigationController?.popViewController(animated: true)
+  }
+
+  func loadDetails(with details: ContactDetails) {
+    firstNameField.text = details.firstName
+    lastNameField.text = details.lastName
+    phoneNumberField.text = details.phoneNumber
+    emailField.text = details.email
+  }
+
+  func showLoadingView(_ show: Bool) {
+    show ? loadingView.startAnimating() : loadingView.stopAnimating()
+  }
+}
