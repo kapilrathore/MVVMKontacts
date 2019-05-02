@@ -19,6 +19,7 @@ class ContactDetailsViewController: UIViewController, StoryboardLoadable, Reusab
 
   var contact: Contact!
   var viewModel: ContactDetailsViewModel!
+  var dataChangeDelegate: DataChangeDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -55,6 +56,7 @@ class ContactDetailsViewController: UIViewController, StoryboardLoadable, Reusab
     let contactDetailsScreen = AddEditContactViewController(from: AddEditContactViewController.reuseId)
     contactDetailsScreen.purpose = .edit
     contactDetailsScreen.contactDetails = viewModel.details
+    contactDetailsScreen.dataChangeDelegate = self
     navigationController?.pushViewController(contactDetailsScreen, animated: true)
   }
 
@@ -90,7 +92,7 @@ extension ContactDetailsViewController: ContactDetailsViewDelegate {
   }
 
   func contactEditted() {
-    // TODO
+    self.dataChangeDelegate?.contactEdittedSuccessfully()
   }
 
   func showLoading(_ show: Bool) {
@@ -115,6 +117,15 @@ extension ContactDetailsViewController: ContactDetailsViewDelegate {
   }
 
   func contactDeleted() {
+    self.dataChangeDelegate?.contactDeletedSuccessfully()
     self.navigationController?.popViewController(animated: true)
   }
 }
+
+extension ContactDetailsViewController: DataChangeDelegate {
+  func contactEdittedSuccessfully() {
+    viewModel.fetchContactDetails()
+    dataChangeDelegate?.contactEdittedSuccessfully()
+  }
+}
+

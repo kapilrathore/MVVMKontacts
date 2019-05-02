@@ -36,6 +36,10 @@ class AddEditContactViewModel {
     self.viewDelegate = viewDelegate
 
     if let validDetails = details {
+      self.firstName = validDetails.firstName
+      self.lastName = validDetails.lastName
+      self.email = validDetails.email
+      self.phoneNumber = validDetails.phoneNumber
       viewDelegate.loadDetails(with: validDetails)
     }
   }

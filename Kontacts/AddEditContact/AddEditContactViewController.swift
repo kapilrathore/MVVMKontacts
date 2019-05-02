@@ -24,6 +24,7 @@ class AddEditContactViewController: UIViewController, StoryboardLoadable, Reusab
 
   var purpose: Purpose = .add
   var contactDetails: ContactDetails?
+  var dataChangeDelegate: DataChangeDelegate?
 
   var viewModel: AddEditContactViewModel!
 
@@ -101,10 +102,12 @@ extension AddEditContactViewController: AddEditContactViewDelegate {
   }
 
   func contactAddedSuccessfully() {
+    self.dataChangeDelegate?.contactAddedSuccessfully()
     self.navigationController?.popViewController(animated: true)
   }
 
   func contactEdittedSuccessfully() {
+    self.dataChangeDelegate?.contactEdittedSuccessfully()
     self.navigationController?.popViewController(animated: true)
   }
 

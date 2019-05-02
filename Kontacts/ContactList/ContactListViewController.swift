@@ -38,12 +38,14 @@ class ContactListViewController: UIViewController {
   func gotoContactDetailsScreen(_ contact: Contact) {
     let contactDetailsScreen = ContactDetailsViewController(from: ContactDetailsViewController.reuseId)
     contactDetailsScreen.contact = contact
+    contactDetailsScreen.dataChangeDelegate = self
     navigationController?.pushViewController(contactDetailsScreen, animated: true)
   }
 
   func gotoAddContactScreen() {
     let addContactScreen = AddEditContactViewController(from: AddEditContactViewController.reuseId)
     addContactScreen.purpose = .add
+    addContactScreen.dataChangeDelegate = self
     navigationController?.pushViewController(addContactScreen, animated: true)
   }
 }
@@ -100,5 +102,19 @@ extension ContactListViewController: ContactListViewDelegate {
 
   func showLoadingView(_ show: Bool) {
     show ? loadingView.startAnimating() : loadingView.stopAnimating()
+  }
+}
+
+extension ContactListViewController: DataChangeDelegate {
+  func contactAddedSuccessfully() {
+    viewModel.fetchAllContacts()
+  }
+  
+  func contactEdittedSuccessfully() {
+    viewModel.fetchAllContacts()
+  }
+
+  func contactDeletedSuccessfully() {
+    viewModel.fetchAllContacts()
   }
 }
