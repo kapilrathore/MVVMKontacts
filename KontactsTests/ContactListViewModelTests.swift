@@ -88,6 +88,23 @@ class ContactListViewModelTests: XCTestCase {
     XCTAssertEqual(expectedValue, actualValue_2)
   }
 
+  func test_item_for_indexPath() {
+    let indexPath_0 = IndexPath(item: 0, section: 0)
+    let expectedValue_0 = MockData.MockContact.amanContact
+    let actualValue_0 = viewModel.item(for: indexPath_0)
+    XCTAssertEqual(expectedValue_0, actualValue_0)
+
+    let indexPath_1 = IndexPath(item: 0, section: 1)
+    let expectedValue_1 = MockData.MockContact.kapilContact
+    let actualValue_1 = viewModel.item(for: indexPath_1)
+    XCTAssertEqual(expectedValue_1, actualValue_1)
+
+    let indexPath_2 = IndexPath(item: 0, section: 2)
+    let expectedValue_2 = MockData.MockContact.randomContact
+    let actualValue_2 = viewModel.item(for: indexPath_2)
+    XCTAssertEqual(expectedValue_2, actualValue_2)
+  }
+
   override func tearDown() {
     self.contactService = nil
     self.viewDelegate = nil
