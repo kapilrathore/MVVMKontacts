@@ -36,7 +36,9 @@ class ContactListViewController: UIViewController {
   }
 
   func gotoContactDetailsScreen(_ contact: Contact) {
-    // TODO
+    let contactDetailsScreen = ContactDetailsViewController(from: ContactDetailsViewController.reuseId)
+    contactDetailsScreen.contact = contact
+    navigationController?.pushViewController(contactDetailsScreen, animated: true)
   }
 
   func gotoAddContactScreen() {
