@@ -82,4 +82,11 @@ enum MockData {
       amanDetails, kapilDetails, randomDetails
     ]
   }
+
+  static let contactSectionTitles = ["A", "K", "R"]
+  static let contactDictionary = [
+    "A": [MockContact.amanContact],
+    "K": [MockContact.kapilContact],
+    "R": [MockContact.randomContact]
+  ]
 }
