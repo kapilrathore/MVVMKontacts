@@ -64,6 +64,24 @@ class ContactDetailsViewModelTests: XCTestCase {
     XCTAssertNil(self.viewModel.getMailUrl())
   }
 
+  func test_phoneCallUrl() {
+    let expectedValue = URL(string: "tel://9876543210")
+    let actualValue = self.viewModel.phoneCallUrl()
+    XCTAssertEqual(expectedValue, actualValue)
+
+    self.viewModel.details = nil
+    XCTAssertNil(self.viewModel.phoneCallUrl())
+  }
+
+  func test_getSmsUrl() {
+    let expectedValue = URL(string: "sms://9876543210")
+    let actualValue = self.viewModel.getSmsUrl()
+    XCTAssertEqual(expectedValue, actualValue)
+
+    self.viewModel.details = nil
+    XCTAssertNil(self.viewModel.getSmsUrl())
+  }
+
   override func tearDown() {
     viewModel = nil
     contactService = nil
