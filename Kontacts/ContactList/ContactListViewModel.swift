@@ -18,8 +18,8 @@ class ContactListViewModel {
   private let contactService: ContactServiceProtocol
   private weak var viewDelegate: ContactListViewDelegate?
 
-  private var contactsDictionary = [String: [Contact]]()
-  private var contactSectionTitles = [String]()
+  var contactsDictionary = [String: [Contact]]()
+  var contactSectionTitles = [String]()
 
   init(_ contactService: ContactServiceProtocol, viewDelegate: ContactListViewDelegate) {
     self.contactService = contactService
@@ -32,22 +32,11 @@ class ContactListViewModel {
     DispatchQueue.global().async {
       self.contactService.getAllContacts { [weak self] response in
         DispatchQueue.main.async {
-          guard let contacts = response else {
+          guard let contacts = response,
+          let contactsDict = self?.getContactsDictionary(from: contacts) else {
             self?.viewDelegate?.showLoadingView(false)
             self?.viewDelegate?.showApiError(for: .get)
             return
-          }
-
-          var contactsDict = [String: [Contact]]()
-
-          for contact in contacts {
-            let firstAlpha = String(contact.firstName.first!).uppercased()
-            if var contactValues = contactsDict[firstAlpha] {
-              contactValues.append(contact)
-              contactsDict[firstAlpha] = contactValues
-            } else {
-              contactsDict[firstAlpha] = [contact]
-            }
           }
 
           self?.contactsDictionary = contactsDict
@@ -57,6 +46,22 @@ class ContactListViewModel {
         }
       }
     }
+  }
+
+  func getContactsDictionary(from contacts: [Contact]) -> [String: [Contact]] {
+    var contactsDict = [String: [Contact]]()
+
+    for contact in contacts {
+      let firstAlpha = String(contact.firstName.first!).uppercased()
+      if var contactValues = contactsDict[firstAlpha] {
+        contactValues.append(contact)
+        contactsDict[firstAlpha] = contactValues
+      } else {
+        contactsDict[firstAlpha] = [contact]
+      }
+    }
+
+    return contactsDict
   }
 
   func numberOfSections() -> Int {
